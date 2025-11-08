@@ -27,7 +27,7 @@ struct HelpView: View {
 struct Help: View {
     var body: some View {
         VStack {
-            //code is coming
+           Text("View is Coming")
         }
     }
 }

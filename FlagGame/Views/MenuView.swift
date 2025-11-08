@@ -10,7 +10,7 @@ import UIKit
 
 struct MenuView: View {
     @Environment(\.colorScheme) var colorSchemes
-    @State private var contentView = false
+    @State private var showGameView = false
     var body: some View {
         NavigationStack {
             ZStack {
@@ -25,7 +25,7 @@ struct MenuView: View {
             
             VStack {
                     Button {
-                        contentView.toggle()
+                        showGameView.toggle()
                         triggerHapticFeedback(style: .medium)
                     } label: {
                         VStack {
@@ -57,7 +57,7 @@ struct MenuView: View {
                 
                 HStack(spacing:50) {
                     Button {
-                        contentView.toggle()
+                        showGameView.toggle()
                         triggerHapticFeedback(style: .medium)
                     } label: {
                         VStack {
@@ -82,12 +82,12 @@ struct MenuView: View {
                                 .foregroundStyle(.purple)
                                 .bold()
                         }
-                    }.fullScreenCover(isPresented: $contentView) {
-                        ContentView()
+                    }.fullScreenCover(isPresented: $showGameView) {
+                       GameView()
                     }
                     
                     Button {
-                        contentView.toggle()
+                        showGameView.toggle()
                         triggerHapticFeedback(style: .medium)
                     } label: {
                         VStack {
@@ -115,7 +115,7 @@ struct MenuView: View {
                 }
                 
                 Button {
-                    contentView.toggle()
+                    showGameView.toggle()
                     triggerHapticFeedback(style: .medium)
                 } label: {
                     VStack {
@@ -150,7 +150,8 @@ struct MenuView: View {
                 
                 Spacer()
                 
-            }.padding(.bottom,40)//.navigationBarItems(trailing: HelpView())
+            }.padding(.bottom,40)
+            //.navigationBarItems(trailing: HelpView())
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 import AVFoundation
 
-struct ContentView: View {
+struct GameView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.dismiss) var dismiss
     @State var answer = ""
@@ -188,5 +188,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    GameView()
 }
